@@ -1,6 +1,7 @@
 import sys
 import json
 
+
 rozmiar_pokoju=[]
 rozmiar_pokoju.append(0)
 rozmiar_pokoju.append(1)
