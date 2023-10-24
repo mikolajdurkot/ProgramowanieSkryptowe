@@ -10,7 +10,7 @@ rozmiar_pokoju.append(2)
 
 
 def zarezerwuj_pokoj(gosc, numer_pokoju, wykaz_pokoi):
-    numer_pokoju = int(numer_pokoju)  # Konwersja na int
+    numer_pokoju = int(numer_pokoju)
     if numer_pokoju not in wykaz_pokoi:
         print(f"Nie ma pokoju o numerze {numer_pokoju}.")
         return

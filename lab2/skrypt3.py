@@ -37,7 +37,7 @@ def main():
             whole_word = args.whole_word
             output = grep.grep(input_data, args.search_string, ignore_case, whole_word)
         else:
-            print("Invalid arguments for skrypt2.")
+            print("Nieprawidłowe argumenty.")
             sys.exit(1)
 
         print(output, end='')
