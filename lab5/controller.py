@@ -1,5 +1,6 @@
 from enum import Enum
-from model import Vector2d, Animal
+from model.core import Vector2d
+from model.animal import Animal
 from typing import List
 
 class MoveDirection(Enum):
@@ -31,10 +32,12 @@ class Simulation:
         self.animals = [Animal(position) for position in positions]
 
     def run(self):
-        num = len(self.animals)
-        for a in range(len(self.directions)):
-            direction = self.directions[a]
-            print(direction)
-            animal = self.animals[a%num]
-            animal.move(MoveDirection.FORWARD)
-            print(f'Zwierzę {a%num} : ({animal.position.x},{animal.position.y}) {animal.orientation}')
+        num_animals = len(self.animals)
+        direction_idx = 0
+        for a in range(len(self.directions)//len(self.animals)):
+            for i in range(num_animals):
+                direction = self.directions[direction_idx]
+                animal = self.animals[i]
+                animal.move(direction)
+                print(f'Zwierzę {i} : ({animal.position.x},{animal.position.y}) {animal.orientation}')
+                direction_idx += 1

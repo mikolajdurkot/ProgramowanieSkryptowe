@@ -54,16 +54,16 @@ class Animal:
         self.position = position
         self.orientation = orientation
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"({self.position.x},{self.position.y}) {self.orientation}"
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return str(self)
 
-    def isAt(self, position: Vector2d):
+    def isAt(self, position: Vector2d) -> bool:
         return self.position == position
 
-    def move(self, direction: MoveDirection):
+    def move(self, direction: MoveDirection) -> None:
         if direction == MoveDirection.LEFT:
             self.orientation = self.orientation.previous()
         elif direction == MoveDirection.RIGHT:
